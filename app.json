@@ -17,7 +17,7 @@
         },
         "MINIO_USERNAME": {
             "description": "The user that executes the minio server",
-            "required": true,
+            "required": true
         },
         "MINIO_ROOT_PASSWORD": {
             "description": "The root password, generate with '$(echo `openssl rand -base64 45` | tr -d \\=+ | cut -c 1-32)'",
