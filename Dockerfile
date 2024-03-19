@@ -7,4 +7,4 @@ RUN mkdir -p /home/dokku/data
 WORKDIR /app
 ADD nginx.conf.sigil .
 
-CMD ["minio", "server", "/home/dokku/data", "--user", "dokku", "--console-address", ":9001"]
+CMD ["minio", "server", "/home/dokku/data", "--console-address", ":9001"]

@@ -1,0 +1,31 @@
+{
+    "name": "minio-dokku",
+    "healthchecks": {
+        "web": [
+            {
+                "type": "startup",
+                "name": "healthcheck",
+                "path": "/minio/health/live",
+                "attempts": 3
+            }
+        ]
+    },
+    "env": {
+        "MINIO_DOMAIN": {
+            "description": "The domain on which minio is running",
+            "required": true
+        },
+        "MINIO_USERNAME": {
+            "description": "The user that executes the minio server",
+            "required": true,
+        },
+        "MINIO_ROOT_PASSWORD": {
+            "description": "The root password, generate with '$(echo `openssl rand -base64 45` | tr -d \\=+ | cut -c 1-32)'",
+            "required": true
+        },
+        "MINIO_ROOT_USER": {
+            "description": "The root user, generate with '$(echo `openssl rand -base64 45` | tr -d \\=+ | cut -c 1-20)'",
+            "required": true
+        }
+    }
+}
